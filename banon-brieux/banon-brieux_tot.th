@@ -1,0 +1,21 @@
+encoding  utf-8
+survey banon-brieux_tot -title "banon-brieux"
+
+input banon-brieux_map.th
+
+
+    input datas/banon-brieux.th    
+
+    
+
+
+#####   PLAN    #####
+    input datas/banon-brieux_P.th2
+
+
+##### COUPE EXTENTED #####   
+    input datas/banon-brieux_C.th2
+
+
+
+endsurvey

@@ -7,13 +7,19 @@ import re
 # CONFIG
 # =====================================
 
-BASE_DIR = Path(__file__).resolve().parent
-TEMPLATE_DIR = (BASE_DIR / "Templates").resolve()
-PROJECT_ROOT = (BASE_DIR  ).resolve()
+# BASE_DIR = Path(__file__).resolve().parent
+# TEMPLATE_DIR = (BASE_DIR / "Templates").resolve()
+# PROJECT_ROOT = (BASE_DIR  ).resolve()
+
+# Dossier racine du projet
+BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = (BASE_DIR / "scripts" / "Templates").resolve()
+# Les projets créés sont dans le dossier parent
+PROJECT_ROOT = BASE_DIR.resolve()
 
 TH2_TEMPLATES = [
-    "CAVENAME-plan.th2",
-    "CAVENAME-coupe.th2"
+    "CAVENAME_P.th2",
+    "CAVENAME_C.th2"
 ]
 
 # =====================================
@@ -26,9 +32,7 @@ parser = argparse.ArgumentParser(
     epilog="""
 Exemples :
 
-python new_survey.py gouffre_berger --th export.th --th2 export.th2
-
-python new_survey.py gouffre_berger --empty-th2
+python Create_survey_structure.py essai --empty-th2
 """
 )
 
@@ -36,7 +40,6 @@ parser.add_argument("survey")
 
 parser.add_argument("--th", help="Export TopoDroid .th")
 parser.add_argument("--th2", help="Export TopoDroid .th2")
-parser.add_argument("--empty-th2", action="store_true")
 
 args = parser.parse_args()
 
@@ -57,8 +60,8 @@ SURVEY_BIS = SURVEY_ID.replace("_", "")
 # =====================================
 
 project_dir = (PROJECT_ROOT / SURVEY_ID).resolve()
-data_dir = project_dir / "Data"
-outputs_dir = project_dir / "Outputs"
+data_dir = project_dir / "datas"
+outputs_dir = project_dir / "exports"
 
 data_dir.mkdir(parents=True, exist_ok=True)
 outputs_dir.mkdir(parents=True, exist_ok=True)
@@ -107,7 +110,7 @@ if args.th2:
 # TH2 DEPUIS TEMPLATE
 # =====================================
 
-elif args.empty_th2:
+else:
 
     for template_name in TH2_TEMPLATES:
 

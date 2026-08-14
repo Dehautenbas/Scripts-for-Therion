@@ -1,0 +1,9 @@
+therion 6.4.0 (2026-05-07)
+  - using Proj 9.8.0, compiled against 9.8.0
+initialization file: C:\Program Files\Therion/therion.ini
+reading ... done
+configuration file: CAVENAME.thconfig
+reading ... done
+reading source files ... 
+therion: error -- can't open file for input -- <CAVENAME>-tot.th
+Press ENTER to exit!

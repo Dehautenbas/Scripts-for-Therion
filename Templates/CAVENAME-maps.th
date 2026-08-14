@@ -1,11 +1,11 @@
 encoding  utf-8
 map MP-<CAVENAME>-plan-tot -title "<CAVENAME>"
-  SP-<CAVENAME>-1
+  # SP-<CAVENAME>-1
 
 endmap
 
 
 map MC-<CAVENAME>-coupe-tot -title "<CAVENAME>"
-  SC-<CAVENAME>-1
+  # SC-<CAVENAME>-1
 
 endmap
